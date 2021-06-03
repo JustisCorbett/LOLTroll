@@ -8,4 +8,6 @@ def index(request):
     data = r.json()
     champions = data["data"]
     print(champions["Akali"])
-    return HttpResponse(champions)
+    return render(request, "buildgenerator/index.html", {
+        "champions": champions
+    })
